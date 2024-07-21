@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleef.org">
+<body>
+
+<h1>update</h1>
+
+<form method="get" th:object="${oldStaff}" th:action="@{/updated/{id}(id=*{id})}" >
+
+    <label >New StaffName:</label>
+    <input type="text"  placeholder="Staff Name" th:field="*{name}"><br><br>
+
+    <label >New StaffPosition:</label>
+    <input type="text"  placeholder="Staff Name" th:field="*{position}"><br><br>
+
+    <label >New StaffSalary:</label>
+    <input type="text"  placeholder="Staff Salary" th:field="*{salary}"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>

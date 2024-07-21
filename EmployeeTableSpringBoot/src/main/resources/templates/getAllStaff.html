@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleef.org">
+
+<head>
+    <link th:href="@{/styles.css}" rel="stylesheet">
+</head>
+
+<body>
+
+<h1>All Staff</h1>
+
+<table style="width:50%">
+    <tr>
+        <td>Staff Name</td>
+        <td>Staff Position</td>
+        <td>Staff Salary</td>
+    </tr>
+    <tr th:each="x: ${ allStaff }">
+        <td th:text="${x.name}"></td>
+        <td th:text="${x.position}"></td>
+        <td th:text="${x.salary}"></td>
+        <td> <a role="button" th:href="@{/update/{id}(id=${x.id}) }">Update</a> </td>
+        <td> <a role="button" th:href="@{/deleteStaff/{id}(id = ${x.id}) }">Delete</a> </td>
+    </tr>
+
+</table>
+<a th:href="@{/}"><h1>add</h1></a>
+</body>
+</html>
